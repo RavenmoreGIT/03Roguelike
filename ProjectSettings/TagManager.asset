@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Characters
-  - 
-  - 
+  - Walls
+  - WallsFront
   - 
   - 
   - 
@@ -41,9 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Characters
-    uniqueID: 3350382305
-    locked: 0
   - name: Walls
     uniqueID: 1865604263
+    locked: 0
+  - name: WallsFront
+    uniqueID: 3969335155
+    locked: 0
+  - name: Characters
+    uniqueID: 3350382305
     locked: 0

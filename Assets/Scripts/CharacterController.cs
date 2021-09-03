@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -16,19 +17,31 @@ public class CharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.position += Vector3.left;
+            if(MovementCheck(Vector3.left)) transform.position += Vector3.left;
         }
+
         if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.position += Vector3.right;
+            if (MovementCheck(Vector3.right)) transform.position += Vector3.right;
         }
+
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.position += Vector3.up;
+            if (MovementCheck(Vector3.up)) transform.position += Vector3.up;
         }
+
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.position += Vector3.down;
+
+            if (MovementCheck(Vector3.down)) transform.position += Vector3.down;
         }
+
+        
+    }
+
+    private bool MovementCheck(Vector3 direction)
+    {
+        if (Physics2D.Raycast(transform.position + direction, Vector2.zero).collider == null) return true;
+        else return false;
     }
 }

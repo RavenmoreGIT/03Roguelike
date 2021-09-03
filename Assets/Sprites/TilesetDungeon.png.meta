@@ -74,6 +74,9 @@ TextureImporter:
   - first:
       213: 8665267714623635322
     second: Footprints
+  - first:
+      213: -1744063541047605592
+    second: FloorFull
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -678,7 +681,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -686,6 +689,27 @@ TextureImporter:
       bones: []
       spriteID: a7f7dcd6317314870800000000000000
       internalID: 8665267714623635322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorFull
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6c52a2377dbc7e0800000000000000
+      internalID: -1744063541047605592
       vertices: []
       indices: 
       edges: []
