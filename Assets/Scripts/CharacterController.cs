@@ -17,29 +17,29 @@ public class CharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if(MovementCheck(Vector3.left)) transform.position += Vector3.left;
+            if(CanMove(Vector3.left)) transform.position += Vector3.left;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (MovementCheck(Vector3.right)) transform.position += Vector3.right;
+            if (CanMove(Vector3.right)) transform.position += Vector3.right;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (MovementCheck(Vector3.up)) transform.position += Vector3.up;
+            if (CanMove(Vector3.up)) transform.position += Vector3.up;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
 
-            if (MovementCheck(Vector3.down)) transform.position += Vector3.down;
+            if (CanMove(Vector3.down)) transform.position += Vector3.down;
         }
 
         
     }
 
-    private bool MovementCheck(Vector3 direction)
+    private bool CanMove(Vector3 direction)
     {
         if (Physics2D.Raycast(transform.position + direction, Vector2.zero).collider == null) return true;
         else return false;

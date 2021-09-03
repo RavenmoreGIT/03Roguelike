@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -325632141
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 1180490281886400076, guid: d8570bfb0eadf234294d52953654ca8b,
     type: 3}
@@ -97,8 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f9bdb7e1770484dbf3eab0eda24790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  WallFrontSprite: {fileID: 4123282186731502908}
 --- !u!1 &8542582426598486002
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +158,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 160822549
   m_Mesh: {fileID: 0}
-  m_InstanceId: 102448
+  m_InstanceId: 26242
 --- !u!212 &8542582426598486000
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +198,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1865604263
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1283641251883392230, guid: d8570bfb0eadf234294d52953654ca8b,
     type: 3}
@@ -276,6 +274,9 @@ MonoBehaviour:
     type: 3}
   sprite: {fileID: 8542582426598486000}
   frontSprite: {fileID: 4123282186731502908}
+  wallAnimator: {fileID: 1455583819513396407}
+  player: {fileID: 0}
+  WallFrontSprite: {fileID: 4123282186731502908}
 --- !u!95 &1455583819513396407
 Animator:
   serializedVersion: 3

@@ -24,14 +24,26 @@ public class WallTile : MonoBehaviour
     public SpriteRenderer sprite;
     public SpriteRenderer frontSprite;
 
+    public Animator wallAnimator;
+    public GameObject player;
+    public SpriteRenderer WallFrontSprite;
+
     private int bitmask=0;
     void Start()
     {
+        /*
+         * Get the player object, used for changing WallTileFront sprite based on the players' position.
+         */
+        player = GameObject.Find("Player");
+
+        /*
+         * Calculate the bit mask based on surroundings, then change the sprite based on the bitmask value
+         */
+        WallTileFront.SetActive(false);
         if (Physics2D.Raycast(transform.position + Vector3.up, Vector2.zero).collider != null) bitmask += 1;
         if (Physics2D.Raycast(transform.position + Vector3.left, Vector2.zero).collider != null) bitmask += 2;
         if (Physics2D.Raycast(transform.position + Vector3.right, Vector2.zero).collider != null) bitmask += 4;
         if (Physics2D.Raycast(transform.position + Vector3.down, Vector2.zero).collider != null) bitmask += 8;
-        WallTileFront.SetActive(false);
         switch (bitmask)
         {
             case 1: 
@@ -70,6 +82,13 @@ public class WallTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player.transform.position.y < transform.position.y)
+        {
+            wallAnimator.SetBool("Visible", true);
+        }
+        else
+        {
+            wallAnimator.SetBool("Visible", false);
+        }
     }
 }
