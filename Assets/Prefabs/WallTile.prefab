@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6724952906692524737}
   - component: {fileID: 4123282186731502908}
-  - component: {fileID: 4443382846138831590}
   m_Layer: 8
   m_Name: WallTileFront
   m_TagString: Untagged
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4443382846138831590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525691132186290169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f9bdb7e1770484dbf3eab0eda24790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8542582426598486002
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +145,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 160822549
   m_Mesh: {fileID: 0}
-  m_InstanceId: 26242
+  m_InstanceId: 29622
 --- !u!212 &8542582426598486000
 SpriteRenderer:
   m_ObjectHideFlags: 0
