@@ -6,37 +6,58 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public GameObject footprint;
+    private bool isMoving = false;
+    private Vector3 MoveTarget;
     // Start is called before the first frame update
     void Start()
     {
-        
+        MoveTarget = transform.position;   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if(CanMove(Vector3.left)) transform.position += Vector3.left;
+        if (!isMoving) { 
+            if (Input.GetKey(KeyCode.A))
+            {
+                if (CanMove(Vector3.left) && !isMoving) StartCoroutine(MoveTo(transform.position + Vector3.left));
+            }
+
+            if (Input.GetKey(KeyCode.D) && !isMoving)
+            {
+                if (CanMove(Vector3.right)) StartCoroutine(MoveTo(transform.position + Vector3.right));
+            }
+
+            if (Input.GetKey(KeyCode.W) && !isMoving)
+            {
+                if (CanMove(Vector3.up)) StartCoroutine(MoveTo(transform.position + Vector3.up));
+            }
+
+            if (Input.GetKey(KeyCode.S) && !isMoving)
+            {
+
+                if (CanMove(Vector3.down)) StartCoroutine(MoveTo(transform.position + Vector3.down));
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+
+    }
+
+    private IEnumerator MoveTo(Vector3 target)
+    {
+        Instantiate(footprint, transform.position, Quaternion.identity);
+        isMoving = true;
+
+        while(Vector3.Distance(transform.position, target) > 0.001)
         {
-            if (CanMove(Vector3.right)) transform.position += Vector3.right;
+            transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime*35);
+            yield return null;
+            
         }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (CanMove(Vector3.up)) transform.position += Vector3.up;
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-
-            if (CanMove(Vector3.down)) transform.position += Vector3.down;
-        }
-
-        
+        isMoving = false;
+        transform.position = target;
+        yield return null;
     }
 
     private bool CanMove(Vector3 direction)
