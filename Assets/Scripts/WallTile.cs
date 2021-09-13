@@ -34,7 +34,7 @@ public class WallTile : MonoBehaviour
         /*
          * Get the player object, used for changing WallTileFront sprite based on the players' position.
          */
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Protagonist");
 
         /*
          * Calculate the bit mask based on surroundings, then change the sprite based on the bitmask value

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class CreatureOverseer : MonoBehaviour
 {
+    public GameObject[] Creatures;
     // Start is called before the first frame update
-    public CreatureOverseer creatureOverseer;
     void Start()
     {
         
